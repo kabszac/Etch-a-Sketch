@@ -29,6 +29,7 @@ function gray(){
         })
     })
     btnContainer.appendChild(btnGray).classList.add('btn')
+    btnGray.classList.add('gray')
 }
 
 gray()
@@ -44,6 +45,7 @@ function black(){
         })
     })
     btnContainer.appendChild(btnBlack).classList.add('btn')
+    btnBlack.classList.add('black')
 }
 
 black()
@@ -62,6 +64,7 @@ function rgb() {
         })
     }) 
     btnContainer.appendChild(btnRgb).classList.add('btn')
+    btnRgb.classList.add('rgb')
 }
 
 rgb()
@@ -74,27 +77,27 @@ function reset(){
 function btnsize(){
     btnSize.textContent = 'Grid Size'
     btnSize.addEventListener('click', () => {
-        let user = prompt('What size would you like your grid be?')
-        if (user === null || user < 1  || user > 100 ){
-            reset()
-            divsGrid(16,16)
-            gray()
-            black()
-            rgb()
+        let input = prompt('Enter the grid size')
+        let inputNum = parseInt(input, 10);
+        if (isNaN(inputNum)){
+            return window.alert('Kindly enter a number')
         }
-        else{
-            reset()
-            divsGrid(user, user)
-            gray()
-            black()
-            rgb()
+        else if (inputNum < 1 ){
+            return window.alert('Kindly enter a positive number')
         }
-    })
+        reset()
+        divsGrid(inputNum, inputNum)
+        gray()
+        black()
+        rgb()
+        btnsize()
+   })
     btnContainer.appendChild(btnSize).classList.add('btn')
+    btnSize.classList.add('gridsize')
+    
 }
 
 btnsize()
-
 
 function background(){
     colors = ['red','green','blue', 'yellow'];

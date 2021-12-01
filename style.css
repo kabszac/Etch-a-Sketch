@@ -85,3 +85,20 @@ span {
     z-index: 100;
     letter-spacing: 1px;
 }
+
+button.btn:nth-child(1):focus {
+    background-color: gray
+}
+
+button.btn:nth-child(2):focus {
+    background-color: black;
+    color: white;
+}
+
+button.btn:nth-child(3):focus {
+    background-color: rgb(8, 103, 172);
+}
+
+button.btn:nth-child(4){
+    position: relative;
+}
